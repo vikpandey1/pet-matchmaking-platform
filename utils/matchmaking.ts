@@ -43,8 +43,8 @@ export function calculateMatchScore(pet1: Pet, pet2: Pet): number {
       const pet2Risks = pet2.health_data.genetic_risks || [];
       
       // Find overlapping genetic risks
-      const overlappingRisks = pet1Risks.filter(risk => 
-        pet2Risks.some(r => r.condition === risk.condition)
+      const overlappingRisks = pet1Risks.filter((risk: GeneticRisk) => 
+        pet2Risks.some((r: GeneticRisk) => r.condition === risk.condition)
       );
       
       // Penalty based on number and severity of overlapping risks
@@ -113,4 +113,28 @@ export function findTopMatches(
   return scoredMatches
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
+}
+
+// Define the risk type interface
+interface GeneticRisk {
+  condition: string;
+  probability: number;
+}
+
+// Mock function to generate random match scores
+export function generateRandomMatches(currentPet: any, otherPets: any[]) {
+  return otherPets.map(pet => {
+    // Don't match with self
+    if (pet.id === currentPet.id) {
+      return { ...pet, matchScore: 0 };
+    }
+    
+    // Generate a score between 60-99
+    const matchScore = 60 + Math.floor(Math.random() * 40);
+    
+    return {
+      ...pet,
+      matchScore
+    };
+  }).filter(pet => pet.matchScore > 0);
 } 
