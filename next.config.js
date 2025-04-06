@@ -4,22 +4,12 @@ const nextConfig = {
   images: {
     domains: [
       'localhost',
-      'yourproductionsite.com',
-      'picsum.photos', // For development placeholders
+      'picsum.photos',
       'supabase.co',
-      // Add your Supabase storage domain when available
     ],
+    unoptimized: true,
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/dashboard',
-        permanent: true,
-      },
-    ];
-  },
-  // Used for deployment on any Node-compatible host (not Vercel)
+  // Used for deployment on any Node-compatible host
   output: 'standalone',
 }
 

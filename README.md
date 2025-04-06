@@ -1,97 +1,96 @@
-# PetTech Matchmaking Platform
+# PetMatch - Pet Matchmaking Platform
 
-A premium pet-tech SaaS platform for dog & cat matchmaking, health summaries, and vet/breeder consulting, with multiple organization roles, premium UX, and built-in monetization.
+PetMatch is a Tinder-like web application for pet owners, helping them find compatible companions for their furry friends. This application includes features for pet management, health tracking, and matchmaking.
 
 ## Features
 
-- 🐾 **Pet Matchmaking**: Tinder-style swipe interface for finding matches for your pets
-- 🏥 **Health Summaries**: AI-powered analysis of pet health records and genetic data
-- 📅 **Booking & Scheduling**: Calendar integration for playdates and vet appointments
-- 💬 **Real-time Messaging**: Chat with other pet owners and professionals
-- 💰 **Built-in Monetization**: Premium tiers, concierge services, and platform fees
+- **Pet Profiles**: Create and manage pet profiles with breed, age, and preferences
+- **Matchmaking**: Swipe right/left to find matches for your pets
+- **Health Dashboard**: Track your pet's health metrics and get recommendations
+- **Responsive Design**: Works on mobile, tablet, and desktop
 
 ## Tech Stack
 
-- **Frontend**: Next.js with Framer Motion animations and Tailwind CSS
-- **Backend**: Supabase (Auth, DB, Storage, Realtime)
-- **AI**: OpenAI integration via Groq or OpenRouter
-- **Payments**: Stripe + PayPal
-- **Email**: Resend API
+- **Framework**: Next.js 13 with App Router
+- **Styling**: Tailwind CSS
+- **State Management**: React Hooks (useState, useEffect)
+- **Deployment**: Vercel
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 16+ and npm/yarn
-- Supabase account
-- Stripe account
-- OpenAI API key
+- Node.js 16.8 or later
+- npm or yarn
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/pet-matchmaking-platform.git
-   cd pet-matchmaking-platform
-   ```
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/pet-match.git
+cd pet-match
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-3. Set up environment variables:
-   ```bash
-   cp .env.local.example .env.local
-   # Fill in your API keys and configuration
-   ```
+3. Start the development server
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-4. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-5. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+## Deployment on Vercel
 
-## Key Components
+The easiest way to deploy this application is using Vercel:
 
-- Tinder-like swipe interface for pet matching
-- AI-powered health analysis
-- Real-time messaging system
-- Role-based access control
-- Premium subscription management
-- Secure payment processing
+1. Create a Vercel account at [vercel.com](https://vercel.com)
+2. Install the Vercel CLI:
+```bash
+npm install -g vercel
+```
 
-## Database Schema
+3. Run the following command in the project directory:
+```bash
+vercel
+```
 
-The platform uses Supabase Postgres with the following main tables:
+4. Follow the prompts to connect your GitHub repository and deploy
 
-- `users`: User accounts with role-based permissions
-- `organizations`: Vet clinics, breeders, and individual pet owners
-- `pets`: Pet profiles with detailed attributes and health data
-- `matches`: Connections between pets with match scores
-- `appointments`: Scheduled events between pets/owners
-- `messages`: Communication between users
-- `transactions`: Payment records for platform services
+## Project Structure
 
-All tables implement Row Level Security (RLS) for data protection.
+```
+/app                     # Next.js App Router pages
+  /dashboard             # Dashboard pages
+  /pets                  # Pet management pages
+  /matches               # Matchmaking pages
+  /health                # Health tracking pages
+  layout.tsx             # Root layout
+  page.tsx               # Home page
+/components              # Reusable components
+/public                  # Static assets
+```
 
-## Deployment
+## Development Roadmap
 
-This application can be deployed on any Node-compatible hosting platform:
-
-- Railway
-- Fly.io
-- Render
-- Heroku
-- AWS/Azure/GCP
-
-The platform is designed to avoid Vercel vendor lock-in.
+- [ ] User authentication with Supabase
+- [ ] Real-time chat between matched pet owners
+- [ ] AI-powered pet compatibility algorithm
+- [ ] Integration with veterinary services
+- [ ] Mobile app with React Native
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details. 
+MIT License - see the LICENSE file for details
+
+## Acknowledgments
+
+- This project was created as a demonstration of Next.js and Tailwind CSS capabilities
+- Pet icons provided by Emoji 

@@ -1,23 +1,11 @@
 import './globals.css';
-import { Inter, Playfair_Display } from 'next/font/google';
-import { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-});
+const inter = Inter({ subsets: ['latin'] });
 
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-playfair-display',
-});
-
-export const metadata: Metadata = {
-  title: 'PetTech - Premium Pet Matchmaking & Health Platform',
-  description: 'Premium pet-tech SaaS platform for dog & cat matchmaking, health summaries, and vet/breeder consulting',
-  keywords: 'pet, dog, cat, matchmaking, health, vet, breeder, SaaS',
+export const metadata = {
+  title: 'PetMatch - Find Companions for Your Pets',
+  description: 'A premium pet matchmaking service to find perfect companions for your beloved pets',
 };
 
 export default function RootLayout({
@@ -26,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfairDisplay.variable}`}>
-      <body className="bg-neutral-50">
+    <html lang="en">
+      <body className={inter.className}>
         {children}
       </body>
     </html>
