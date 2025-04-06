@@ -1,0 +1,38 @@
+{
+  "name": "pet-matchmaking-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@stripe/react-stripe-js": "^2.3.0",
+    "@stripe/stripe-js": "^2.1.5",
+    "@supabase/auth-helpers-nextjs": "^0.7.4",
+    "@supabase/supabase-js": "^2.33.1",
+    "autoprefixer": "^10.4.15",
+    "framer-motion": "^10.16.4",
+    "next": "13.4.19",
+    "openai": "^4.0.0",
+    "postcss": "^8.4.29",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.46.1",
+    "resend": "^1.1.0",
+    "stripe": "^13.5.0",
+    "swr": "^2.2.2",
+    "tailwindcss": "^3.3.3",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "eslint": "^8.49.0",
+    "eslint-config-next": "^13.4.19",
+    "typescript": "^5.2.2"
+  }
+} 
